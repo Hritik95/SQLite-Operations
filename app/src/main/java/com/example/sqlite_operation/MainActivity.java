@@ -3,8 +3,13 @@ package com.example.sqlite_operation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText name,contact,email;
+    Button add_btn,update_btn,delete_btn,show_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

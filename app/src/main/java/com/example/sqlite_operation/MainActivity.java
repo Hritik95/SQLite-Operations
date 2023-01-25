@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "New Entry Added", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, "Failed to Insert", Toast.LENGTH_SHORT).show();
+
+                name.setText("");
+                contact.setText("");
+                email.setText("");
             }
         });
 
@@ -61,7 +65,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Data Updated", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, "Failed to Update", Toast.LENGTH_SHORT).show();
+
+                name.setText("");
+                contact.setText("");
+                email.setText("");
             }
+
         });
 
         delete_btn.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Data Deleted", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(MainActivity.this, "Failed to Delete", Toast.LENGTH_SHORT).show();
+
+                name.setText("");
+                contact.setText("");
+                email.setText("");
             }
         });
 
@@ -94,13 +107,13 @@ public class MainActivity extends AppCompatActivity {
                     buffer.append("Name : " + res.getString(0) + "\n");
                     buffer.append("Contact : " + res.getString(1) + "\n");
                     buffer.append("Email Address : " + res.getString(2) + "\n\n");
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setCancelable(true);
-                    builder.setTitle("User Data");
-                    builder.setMessage(buffer.toString());
-                    builder.show();
                 }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setCancelable(true);
+                builder.setTitle("User Data");
+                builder.setMessage(buffer.toString());
+                builder.show();
             }
         });
     }
